@@ -69,8 +69,8 @@ public:
 
 // TODO 12: implement isSameSize
 bool isSameSize(const Rectangle& r1, const Rectangle& r2) {
-    return (r1.getWidth() == r2.getWidth()) &&
-           (r1.getHeight() == r2.getHeight());  // stub
+    return r1.getArea() == r2.getArea();
+           
 }
 
 
