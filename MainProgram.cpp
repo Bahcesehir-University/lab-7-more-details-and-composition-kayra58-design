@@ -17,7 +17,7 @@ private:
     double x;
     double y;
 public:
-    Point(double x, double y) : x(x), y(y); {}  // stub — fix initializer
+    Point(double x, double y) : x(x), y(y) {}  // stub — fix initializer
 
     double getX()  const { return x; }   // stub — add const
 
@@ -38,7 +38,7 @@ private:
 public:
     // TODO 6: constructor with member initializer list
     Rectangle(double x1, double y1, double x2, double y2)
-        : topLeft(x1,y1), bottomRight(x2,y2); {}  // stub — fix initializer
+        : topLeft(x1,y1), bottomRight(x2,y2) {}  // stub — fix initializer
 
     // TODO 7: const getWidth()
     double getWidth() const { return topLeft.x - bottomRight.x ; }  // stub
