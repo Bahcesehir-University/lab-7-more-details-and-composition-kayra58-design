@@ -17,7 +17,7 @@ private:
     double x;
     double y;
 public:
-    Point(double x, double y) : x(x), y(y) {}  // stub — fix initializer
+    Point(double x, double y) : x(x), y(y); {}  // stub — fix initializer
 
     double getX()  const { return x; }   // stub — add const
 
@@ -38,24 +38,24 @@ private:
 public:
     // TODO 6: constructor with member initializer list
     Rectangle(double x1, double y1, double x2, double y2)
-        : topLeft(x1,y1), bottomRight(x2,y2) {}  // stub — fix initializer
+        : topLeft(x1,y1), bottomRight(x2,y2); {}  // stub — fix initializer
 
     // TODO 7: const getWidth()
-    double getWidth() const { return bottomRight.x - topLeft.x ; }  // stub
+    double getWidth() const { return topLeft.x - bottomRight.x ; }  // stub
 
     // TODO 8: const getHeight()
     double getHeight() const { return  topLeft.y- bottomRight.y ; }  // stub
 
     // TODO 9: const getArea()
-    double getArea() const { return getHeight()*getWidth() }  // stub
+    double getArea() const { return getHeight()*getWidth(); }  // stub
 
     // TODO 10: const display()
     void display() const {
         std::cout <<" Rectangle: ";
-        cout << "Top Left:";
-        top.Left.display();
-        cout << "\nBottomRight :" ;
-        bottom.Right.display();
+        std:: cout << "TopLeft:";
+        topLeft.display();
+       std:: cout << "\nBottomRight :" ;
+        bottomRight.display();
         std::cout <<"\nWidth:" << getWidth() ;
         std::cout <<"Height:" << getHeight() ;
         std::cout <<"Area:" << getArea() ;
@@ -98,5 +98,9 @@ public:
 int main() {
     // TODO 17-21: demo code
     std::cout << "Complete the TODOs above!" << std::endl;
+    Rectangle rect1(0,0,4,3);
+    Rectangle rect2 (1,1,4,4);
+    std::cout <<"\nRect1:\n"; rect1.display();
+    std::cout << "\nRect2:\n"; rect2.display();
     return 0;
 }
