@@ -41,7 +41,7 @@ public:
         : topLeft(x1,y1), bottomRight(x2,y2) {}  // stub — fix initializer
 
     // TODO 7: const getWidth()
-    double getWidth() const { return topLeft.x - bottomRight.x ; }  // stub
+    double getWidth() const { return bottomRight.x - topLeft.x ; }  // stub
 
     // TODO 8: const getHeight()
     double getHeight() const { return  topLeft.y- bottomRight.y ; }  // stub
@@ -68,7 +68,8 @@ public:
 
 // TODO 12: implement isSameSize
 bool isSameSize(const Rectangle& r1, const Rectangle& r2) {
-    return false;  // stub
+    return (r1.getWidth() == r2.getWidth()) &&
+           (r1.getHeight() == r2.getHeight());  // stub
 }
 
 
@@ -102,5 +103,13 @@ int main() {
     Rectangle rect2 (1,1,4,4);
     std::cout <<"\nRect1:\n"; rect1.display();
     std::cout << "\nRect2:\n"; rect2.display();
+    std::cout << "\nSame Size? " << (isSameSize(rect1,rect2)? "Yews" : "No") << "\n";
+    const ConstDemo cd1(7);
+    std::cout << "const object value : " << cd1.getValue () << "\n";
+    std::cout << "const object doubled: "<< cd1.constGetDouble() << "\n";
+    
+ConstDemo cd2(5);
+cd2. doubleValue();
+std::cout << "non-const object after doubleValue: " << cd2.getValue() << "\n";
     return 0;
 }
